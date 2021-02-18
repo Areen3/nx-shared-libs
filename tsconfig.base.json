@@ -1,0 +1,38 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDirs": [".", "libs"],
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+    "target": "ES2016",
+    "module": "es2020",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["ESNext", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "strictNullChecks": false,
+    "downlevelIteration": true,
+    "outDir": "./dist/out-tsc",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "stripInternal": true,
+    "strictFunctionTypes": false,
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "strict": false,
+    "paths": {
+      "@af/lib-test": ["libs/af/tools/lib-test/src/index.ts"],
+      "@af/lib-test-shared": ["libs/af/tools/lib-test-shared/src/index.ts"],
+      "@af/lib-test-shared2": ["libs/af/tools/lib-test-shared2/src/index.ts"],
+      "@af/lib-test-shared3": ["libs/af/shared/lib-test-shared3/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

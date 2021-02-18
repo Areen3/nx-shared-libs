@@ -1,0 +1,7 @@
+{
+  "name": "@af/lib-test",
+  "version": "0.0.1",
+  "devDependencies": {
+    "@af/lib-test-shared3": "*"
+  }
+}

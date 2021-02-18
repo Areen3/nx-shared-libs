@@ -1,0 +1,162 @@
+{
+  "version": 1,
+  "projects": {
+    "af-tools-lib-test": {
+      "root": "libs/af/tools/lib-test",
+      "sourceRoot": "libs/af/tools/lib-test/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/af/tools/lib-test/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/af/tools/lib-test"],
+          "options": {
+            "jestConfig": "libs/af/tools/lib-test/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/af/tools/lib-test",
+            "tsConfig": "libs/af/tools/lib-test/tsconfig.lib.json",
+            "packageJson": "libs/af/tools/lib-test/package.json",
+            "main": "libs/af/tools/lib-test/src/index.ts",
+            "assets": ["libs/af/tools/lib-test/*.md"]
+          }
+        }
+      }
+    },
+    "af-tools-lib-test-shared": {
+      "root": "libs/af/tools/lib-test-shared",
+      "sourceRoot": "libs/af/tools/lib-test-shared/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/af/tools/lib-test-shared/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/af/tools/lib-test-shared"],
+          "options": {
+            "jestConfig": "libs/af/tools/lib-test-shared/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "af-tools-lib-test-shared2": {
+      "root": "libs/af/tools/lib-test-shared2",
+      "sourceRoot": "libs/af/tools/lib-test-shared2/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/af/tools/lib-test-shared2/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/af/tools/lib-test-shared2"],
+          "options": {
+            "jestConfig": "libs/af/tools/lib-test-shared2/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "af-tools-lib-test-shared3": {
+      "root": "libs/af/shared/lib-test-shared3",
+      "sourceRoot": "libs/af/shared/lib-test-shared3/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/af/shared/lib-test-shared3/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/af/shared/lib-test-shared3"],
+          "options": {
+            "jestConfig": "libs/af/shared/lib-test-shared3/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular",
+    "analytics": false
+  },
+  "schematics": {
+    "@nrwl/workspace": {
+      "library": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/cypress": {
+      "cypress-project": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/node": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/nest": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/express": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress",
+      "strict": true,
+      "linter": "eslint",
+      "style": "scss"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest",
+      "strict": true,
+      "linter": "eslint",
+      "style": "scss",
+      "addModuleSpec": true,
+      "buildable": true,
+      "prefix": "apr-af",
+      "publishable": true,
+      "importPath": "@apr/af/"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "apr-af-example"
+}

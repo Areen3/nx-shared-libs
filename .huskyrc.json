@@ -1,0 +1,6 @@
+{
+  "hooks": {
+    "pre-commit": "npm run lint:husky && git add .",
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+  }
+}

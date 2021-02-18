@@ -1,0 +1,39 @@
+{
+  "npmScope": "apr",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "cacheDirectory": "./cache/nx"
+      }
+    }
+  },
+  "projects": {
+    "af-tools-lib-test": {
+      "tags": []
+    },
+    "af-tools-lib-test-shared": {
+      "tags": []
+    },
+    "af-tools-lib-test-shared2": {
+      "tags": []
+    },
+    "af-tools-lib-test-shared3": {
+      "tags": []
+    }
+  }
+}

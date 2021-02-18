@@ -1,0 +1,59 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach nest api",
+      "port": 60966,
+      "restart": true,
+      "stopOnEntry": false,
+      "protocol": "inspector",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Generator launch",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/apps/af/generator/src/app/app.ts",
+      "outFiles": ["${workspaceFolder}/dist/apps/af/generator/**/*.js"],
+      "args": ["${workspaceFolder}\\apps\\af\\generator\\data\\model-to-generate.json"]
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch angular app",
+      "url": "http://localhost:4200",
+      // "webRoot": "${workspaceFolder}",
+      "pathMapping": {},
+
+      "sourceMapPathOverrides": {
+        "webpack:///./*": "${webRoot}/*" // odwołanie względne wskazuje wszystkie pliki w katalogu aplikacji
+        // odwolanie do fizycznej lokalizacji źródełek w katalogu głównym środowiska
+        // "webpack:///./*": "${webRoot}/apr/apps/af/example/*" // odwołanie względne wskazuje wszystkie pliki w katalogu aplikacji
+      }
+    },
+    {
+      "type": "chrome",
+      "request": "attach",
+      "name": "Attach to Cypress",
+      "port": 9222,
+      "url": "http://localhost*",
+//       "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "pathMapping": {},
+      "sourceMapPathOverrides": {
+        "webpack:///./*": "${webRoot}/*" // odwołanie względne wskazuje wszystkie pliki w katalogu aplikacji
+        // odwolanie do fizycznej lokalizacji źródełek w katalogu głównym środowiska
+        // "webpack:///./*": "${webRoot}/apr/apps/af/example/*" // odwołanie względne wskazuje wszystkie pliki w katalogu aplikacji
+      }
+      "skipFiles": [
+        "cypress_runner.js",
+      ]
+    }
+  ]
+}
